@@ -1,0 +1,243 @@
+/* ------------------------------
+   General
+------------------------------ */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #f7f5f2;
+  --surface: #ffffff;
+  --text: #252525;
+  --muted: #6b6b6b;
+  --accent: #7c5cff;
+  --border: #e5e1dc;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--background);
+  color: var(--text);
+}
+
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+/* ------------------------------
+   Header
+------------------------------ */
+
+.site-header {
+  padding: 3rem 0;
+  text-align: center;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.site-header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ------------------------------
+   Controls
+------------------------------ */
+
+.controls {
+  padding: 2rem 0;
+}
+
+.controls label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+#search-input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+#search-input:focus,
+#sort-select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.control-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.control-row label {
+  margin: 0;
+}
+
+#sort-select {
+  padding: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+#breed-count {
+  color: var(--muted);
+}
+
+/* ------------------------------
+   Breed grid
+------------------------------ */
+
+.breed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+/* ------------------------------
+   Breed cards
+------------------------------ */
+
+.breed-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.breed-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  background: #eee;
+}
+
+.breed-card-content {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.breed-card h2 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.breed-description {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.breed-details {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.breed-details p {
+  margin: 0 0 0.75rem;
+}
+
+.breed-details strong {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+/* ------------------------------
+   Buttons
+------------------------------ */
+
+.load-more-container {
+  text-align: center;
+  padding: 1rem 0 3rem;
+}
+
+#load-more-button {
+  padding: 0.85rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#load-more-button:hover {
+  opacity: 0.9;
+}
+
+#load-more-button:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+#load-more-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ------------------------------
+   Status
+------------------------------ */
+
+.status-message {
+  text-align: center;
+  padding: 1rem;
+  color: var(--muted);
+}
+
+.status-message.error {
+  color: #b42318;
+}
+
+/* ------------------------------
+   Footer
+------------------------------ */
+
+.site-footer {
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* ------------------------------
+   Mobile
+------------------------------ */
+
+@media (max-width: 600px) {
+  .site-header {
+    padding: 2rem 0;
+  }
+
+  .breed-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .breed-card img {
+    height: 240px;
+  }
+}
