@@ -4,9 +4,6 @@
 
 const API_URL = "https://dog-breed-api.cilantrolover.workers.dev/breeds";
 
-// API_KEY comes from config.js
-// Make sure config.js is loaded BEFORE this file in index.html.
-
 // ------------------------------
 // DOM elements
 // ------------------------------
@@ -387,11 +384,7 @@ function createBreedCard(breed) {
 
   addDetail(details, "Origin", breed.origin);
 
-  addDetail(details, "Life span", breed.life_span);
-
   addDetail(details, "Breed group", breed.breed_group);
-
-  addDetail(details, "Bred for", breed.bred_for);
 
   // ------------------------------
   // Assemble card
